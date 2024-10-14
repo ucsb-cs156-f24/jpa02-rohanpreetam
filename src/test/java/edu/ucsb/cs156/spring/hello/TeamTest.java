@@ -70,7 +70,17 @@ public class TeamTest {
         assert(!team.equals(null));
     }
 
-    
+    @Test
+    public void equals_same_name_different_members() {
+        Team t4 = new Team();
+        Team t5 = new Team();
+        t4.setName("Rohan");
+        t4.addMember("Phil");
+        t5.setName("Rohan");
+        t5.addMember("Jelly");
+
+        assertFalse(t4.equals(t5));
+    }
 
 
 
